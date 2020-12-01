@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Codewars - Maximum Product [7 kyu]</title>
+</head>
+<body>
+    <div>
+        <a href="https://www.codewars.com/kata/5a4138acf28b82aa43000117" target="_blank">Codewars kata</a>
+    </div>
+    <div class="markdown prose max-w-none" id="description"><p>John has invited some friends. His list is:</p>
+        <p><strong><em>Given</em></strong> <em>an array of integers</em> , <strong><em>Find</em></strong> <strong><em>the maximum product</em></strong> <em>obtained from multiplying 2 adjacent numbers in the array</em>.</p>
+    </div>
+    <script type="module">
+        function meeting(s) {
+            //List of names split between ; 
+            let lsNames = s.toUpperCase().split(';');
+            let lsSepNames=[];
+            let strResult="";
+            for(lsName of lsNames) {
+                //Split names and surnames then invert them to fit the result expected
+                lsSepNames.push(lsName.split(':').reverse());
+            }
+            //Sort the names, will apply to lastnames then surnames, as expected
+            lsSepNames.sort();
+            //Build the result string with the well sorted names
+            for(lsSepName of lsSepNames) {
+                strResult+="("+lsSepName.join(', ')+")";
+            }
+            return strResult
+        }
+    </script>
+</body>
+</html>

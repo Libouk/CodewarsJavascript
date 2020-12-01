@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Codewars - Sum of Parts [6 kyu]</title>
+</head>
+<body>
+    <div>
+        <a href="https://www.codewars.com/kata/5ce399e0047a45001c853c2b" target="_blank">Goto Codewars kata</a>
+    </div>
+    <div class="markdown prose max-w-none" id="description"><p>Welcome. In this kata, you are asked to square every digit of a number and concatenate them.</p>
+        <p>For example, if we run 9119 through the function, 811181 will come out, because 9<sup>2</sup> is 81 and 1<sup>2</sup> is 1.</p>
+        <p><strong>Note:</strong> The function accepts an integer and returns an integer</p>
+    </div>
+    <script type="module">
+        function squareDigits(num){
+            var arrayChiffres = stringNum.split('');
+            var stringNum = num.toString();
+            for (index = 0; index < arrayChiffres.length; ++index) {
+                arrayChiffres[index] = parseInt(arrayChiffres[index])*parseInt(arrayChiffres[index]);
+            }
+            return parseInt(arrayChiffres.join(''));
+        }
+    </script>
+</body>
+</html>

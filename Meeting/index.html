@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Codewars - Meeting [6 kyu]</title>
+</head>
+<body>
+    <div>
+        <a href="https://www.codewars.com/kata/59df2f8f08c6cec835000012/javascript" target="_blank">Codewars kata</a>
+    </div>
+    <div class="markdown prose max-w-none" id="description"><p>John has invited some friends. His list is:</p>
+        <pre><code>s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";</code></pre><p>Could you make a program that </p>
+        <ul>
+        <li>makes this string uppercase</li>
+        <li>gives it sorted in alphabetical order by last name. </li>
+        </ul>
+        <p>When the last names are the same, sort them by first name.
+        Last name and first name of a guest come in the result between parentheses separated by a comma.</p>
+        <p>So the result of function <code>meeting(s)</code> will be:</p>
+        <pre><code>"(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)"</code></pre><p>It can happen that in two distinct families with the same family name two people have the same first name too.</p>
+        <h1 id="notes">Notes</h1>
+        <ul>
+        <li>You can see another examples in the "Sample tests".</li>
+        </ul>
+    </div>
+    <script type="module">
+        function meeting(s) {
+            //List of names split between ; 
+            let lsNames = s.toUpperCase().split(';');
+            let lsSepNames=[];
+            let strResult="";
+            for(lsName of lsNames) {
+                //Split names and surnames then invert them to fit the result expected
+                lsSepNames.push(lsName.split(':').reverse());
+            }
+            //Sort the names, will apply to lastnames then surnames, as expected
+            lsSepNames.sort();
+            //Build the result string with the well sorted names
+            for(lsSepName of lsSepNames) {
+                strResult+="("+lsSepName.join(', ')+")";
+            }
+            return strResult
+        }
+    </script>
+</body>
+</html>
